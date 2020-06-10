@@ -18,7 +18,7 @@ func main() {
 	start := time.Now()
 	s1 := scheduler.New(1000, 10000, func(pr interface{}) {
 		// TODO
-	})
+	}, nil)
 	s1.Start()
 
 	for i := 0; i < 1000000; i++ {
