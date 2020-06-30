@@ -3,7 +3,7 @@ package scheduler
 import (
 	"fmt"
 	"sync"
-	. "time"
+	"time"
 
 	"github.com/seiflotfy/cuckoofilter"
 )
@@ -93,7 +93,7 @@ func (s *Scheduler) Enqueue(req interface{}) error {
 func (s *Scheduler) Wait() {
 	// check if no element in queue
 	for {
-		Sleep(Second)
+		time.Sleep(time.Millisecond * 10)
 		if len(s.reqChan) == 0 {
 			break
 		}
